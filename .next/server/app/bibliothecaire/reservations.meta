@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/bibliothecaire/layout,_N_T_/bibliothecaire/reservations/layout,_N_T_/bibliothecaire/reservations/page,_N_T_/bibliothecaire/reservations"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/bibliothecaire/reservations/__PAGE__",
+    "/bibliothecaire/reservations",
+    "/bibliothecaire",
+    "/_index",
+    "/_head"
+  ]
+}

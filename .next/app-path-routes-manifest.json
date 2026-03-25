@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/adherent/catalogue/page": "/adherent/catalogue",
+  "/adherent/mes-emprunts/page": "/adherent/mes-emprunts",
+  "/adherent/mon-compte/page": "/adherent/mon-compte",
+  "/adherent/page": "/adherent",
+  "/adherent/reservations/page": "/adherent/reservations",
+  "/auth/page": "/auth",
+  "/bibliothecaire/adherents/page": "/bibliothecaire/adherents",
+  "/bibliothecaire/amendes/page": "/bibliothecaire/amendes",
+  "/bibliothecaire/emprunts/page": "/bibliothecaire/emprunts",
+  "/bibliothecaire/livres/page": "/bibliothecaire/livres",
+  "/bibliothecaire/page": "/bibliothecaire",
+  "/bibliothecaire/rapports/page": "/bibliothecaire/rapports",
+  "/bibliothecaire/reservations/page": "/bibliothecaire/reservations",
+  "/page": "/"
+}

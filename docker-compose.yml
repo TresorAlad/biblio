@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # Base de données PostgreSQL
+  postgres:
+    image: postgres:16-alpine
+    container_name: gedr-postgres
+    environment:
+      POSTGRES_USER: biblio_user
+      POSTGRES_PASSWORD: biblio_password
+      POSTGRES_DB: biblio
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/biblio.sql:/docker-entrypoint-initdb.d/01-biblio.sql
+    networks:
+      - gedr-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U biblio_user -d biblio" ]
+      timeout: 20s
+      retries: 10
+      interval: 10s
+
+  # Backend FastAPI
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gedr-backend
+    environment:
+      APP_NAME: "BibliO API"
+      APP_ENV: "production"
+      APP_SECRET_KEY: "your-secret-key-change-in-production"
+      DB_HOST: "postgres"
+      DB_PORT: "5432"
+      DB_USER: "postgres"
+      DB_PASSWORD: "OSSEYI"
+      DB_NAME: "biblio"
+      CORS_ORIGINS: "http://localhost:3000,http://frontend:3000"
+      PENALTY_RATE_PER_DAY: "0.50"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    networks:
+      - gedr-network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Frontend Next.js
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gedr-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:8000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./app:/app/app
+      - ./components:/app/components
+      - ./hooks:/app/hooks
+      - ./lib:/app/lib
+      - ./public:/app/public
+      - ./styles:/app/styles
+    networks:
+      - gedr-network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+
+
+networks:
+  gedr-network:
+    driver: bridge

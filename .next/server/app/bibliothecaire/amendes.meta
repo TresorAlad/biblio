@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/bibliothecaire/layout,_N_T_/bibliothecaire/amendes/layout,_N_T_/bibliothecaire/amendes/page,_N_T_/bibliothecaire/amendes"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/bibliothecaire/amendes/__PAGE__",
+    "/bibliothecaire/amendes",
+    "/bibliothecaire",
+    "/_index",
+    "/_head"
+  ]
+}

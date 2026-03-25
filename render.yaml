@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: gedr-backend
+    runtime: docker
+    plan: free
+    # Chemin vers le dossier du backend
+    dockerContext: ./backend
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_NAME
+        value: "BibliO API"
+      - key: APP_ENV
+        value: production
+      - key: APP_SECRET_KEY
+        generateValue: true
+      - key: DB_URL
+        # On ne met pas la valeur ici pour la sécurité, 
+        # Render vous demandera de la saisir ou vous pouvez la lier à un secret.
+        sync: false
+      - key: PORT
+        value: 8000
+    # On expose le port 8000
+    healthCheckPath: /

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/adherent/layout,_N_T_/adherent/mes-emprunts/layout,_N_T_/adherent/mes-emprunts/page,_N_T_/adherent/mes-emprunts"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/adherent/mes-emprunts/__PAGE__",
+    "/adherent/mes-emprunts",
+    "/adherent",
+    "/_index",
+    "/_head"
+  ]
+}

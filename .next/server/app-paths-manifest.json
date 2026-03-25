@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/adherent/catalogue/page": "app/adherent/catalogue/page.js",
+  "/adherent/mes-emprunts/page": "app/adherent/mes-emprunts/page.js",
+  "/adherent/mon-compte/page": "app/adherent/mon-compte/page.js",
+  "/adherent/page": "app/adherent/page.js",
+  "/adherent/reservations/page": "app/adherent/reservations/page.js",
+  "/auth/page": "app/auth/page.js",
+  "/bibliothecaire/adherents/page": "app/bibliothecaire/adherents/page.js",
+  "/bibliothecaire/amendes/page": "app/bibliothecaire/amendes/page.js",
+  "/bibliothecaire/emprunts/page": "app/bibliothecaire/emprunts/page.js",
+  "/bibliothecaire/livres/page": "app/bibliothecaire/livres/page.js",
+  "/bibliothecaire/page": "app/bibliothecaire/page.js",
+  "/bibliothecaire/rapports/page": "app/bibliothecaire/rapports/page.js",
+  "/bibliothecaire/reservations/page": "app/bibliothecaire/reservations/page.js",
+  "/page": "app/page.js"
+}
