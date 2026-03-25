@@ -1,1 +1,40 @@
-node_modules
+# Node.js
+node_modules/
+dist/
+build/
+.npm
+.eslintcache
+
+# Next.js
+.next/
+out/
+
+# Python (Backend)
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/.venv/
+backend/venv/
+backend/ENV/
+backend/.env
+
+# Local Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.docker
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Misc
+.vercel
+*.log
