@@ -1,4 +1,4 @@
-# Frontend Dockerfile pour Next.js
+# Frontend Dockerfile pour Next.js (Production)
 FROM node:20-alpine
 
 WORKDIR /app
@@ -7,7 +7,8 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml* package-lock.json* ./
 
 # Installer les dépendances
-RUN npm install -g pnpm && pnpm install && npm install
+# On utilise npm install pour plus de simplicité ici
+RUN npm install
 
 # Copier le code source
 COPY . .
@@ -15,6 +16,12 @@ COPY . .
 # Builder l'application
 RUN npm run build
 
-EXPOSE 3000
+# Exposer le port par défaut de Render
+EXPOSE 10000
 
-CMD ["npm", "run", "dev"]
+# Variables d'environnement pour la production
+ENV NODE_ENV production
+ENV PORT 10000
+
+# Lancement en mode production sur 0.0.0.0
+CMD ["npx", "next", "start", "-H", "0.0.0.0", "-p", "10000"]
